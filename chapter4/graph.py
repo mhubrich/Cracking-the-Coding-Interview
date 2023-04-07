@@ -26,6 +26,10 @@ def example_graph():
     e = Node('E')
     f = Node('F')
     g = Node('G')
+    h = Node('H')
+    i = Node('I')
+    j = Node('J')
+    k = Node('K')
     a.children = [b, c, e]
     b.children = [a, d, e]
     c.children = [a, f, g]
@@ -33,4 +37,8 @@ def example_graph():
     e.children = [a, b, d]
     f.children = [c]
     g.children = [c]
-    return Graph([a, b, c, d, e, f, g])
+    h.children = [i, j]
+    i.children = [h, j]
+    j.children = [h, i, k]
+    k.children = [j]
+    return Graph([a, b, c, d, e, f, g, h, i, j, k])
