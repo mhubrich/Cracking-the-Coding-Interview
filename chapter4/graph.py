@@ -14,6 +14,13 @@ class Graph:
     def __init__(self, nodes=[]):
         self.nodes = nodes
     
+    # Returns the first node with matching value, None otherwise.
+    def get(self, value):
+        for n in self.nodes:
+            if n.value == value:
+                return n
+        return None
+    
     def __str__(self):
         return '\n'.join([str(n) for n in self.nodes])
 
